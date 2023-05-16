@@ -24,16 +24,14 @@
     <v-list-item-action>
       <div class="flex items-center">
         <v-icon @click="openTask({ id: task.id })">mdi-eye</v-icon>
-        <v-icon color="warning">mdi-pencil</v-icon>
+        <v-icon color="warning" @click="onEditTask({ id: task.id })">
+          mdi-pencil
+        </v-icon>
         <button @click="deleteTask({ id: task.id })">
           <v-icon color="red">mdi-trash-can</v-icon>
         </button>
       </div>
     </v-list-item-action>
-    <!-- <v-list-item-action>
-    </v-list-item-action>
-    <v-list-item-action>
-    </v-list-item-action> -->
   </v-list-item>
 </template>
 
@@ -71,6 +69,10 @@ export default {
 
     openTask({ id }) {
       this.$emit('open-task', { id })
+    },
+
+    onEditTask({ id }) {
+      this.$emit('edit-task', { id })
     },
   },
 }

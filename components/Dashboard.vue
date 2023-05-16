@@ -22,7 +22,9 @@
           />
         </v-list>
       </v-col>
-      <v-dialog> </v-dialog>
+      <v-dialog v-model="isOpenEditTaskModal">
+        <EditTaskForm v-if="editedId" :key="editedId" :task-id="editedId" />
+      </v-dialog>
     </v-row>
   </v-sheet>
 </template>
@@ -32,13 +34,18 @@ export default {
   data() {
     return {
       tasks: [],
+      isOpenEditTaskModal: false,
+      editedId: null,
     }
   },
   async fetch() {
     this.tasks = await this.$api.base.auth.tasks.getTasks()
   },
   methods: {
-    onOpenTask({ id }) {},
+    onEditTask({ id }) {
+      this.editedId = id
+      this.isOpenEditTaskModal = true
+    },
   },
 }
 </script>
