@@ -6,7 +6,7 @@
         <v-card-actions>
           <v-btn type="submit" class="ml-auto" color="primary">
             <v-progress-circular v-if="loading" indeterminate color="white" />
-            <span v-else>Add new Task</span>
+            <span v-else>Edit Task</span>
           </v-btn>
         </v-card-actions>
       </TaskForm>
