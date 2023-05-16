@@ -42,7 +42,9 @@ export default {
           tags: this.form.tags,
         })
         this.loading = false
-      } catch (error) {}
+      } catch (error) {
+        // TODO: handle error
+      }
     },
   },
 }
