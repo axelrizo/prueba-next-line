@@ -24,10 +24,10 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: [],
+  css: ['vue-toast-notification/dist/theme-bootstrap.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/services/api.js'],
+  plugins: ['~/services/api.js', '~/plugins/toast.js'],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,

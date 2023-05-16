@@ -63,8 +63,13 @@ export default {
     },
 
     async deleteTask({ id }) {
-      await this.$api.base.tasks.removeTask({ id })
-      this.$emit('delete-task')
+      try {
+        await this.$api.base.tasks.removeTask({ id })
+        this.$emit('delete-task')
+        this.$toast.success('Task removed successfully')
+      } catch (error) {
+        this.$toast.error('Something happened!')
+      }
     },
 
     openTask({ id }) {

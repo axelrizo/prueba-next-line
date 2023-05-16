@@ -41,9 +41,10 @@ export default {
           description: this.form.description,
           tags: this.form.tags,
         })
+        this.$toast.success('Task created successfully')
         this.loading = false
       } catch (error) {
-        // TODO: handle error
+        this.$toast.error('Something happened!')
       }
     },
   },

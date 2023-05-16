@@ -49,12 +49,20 @@ export default {
     }
   },
   async fetch() {
-    this.tasks = await this.$api.base.tasks.getTasks()
+    try {
+      this.tasks = await this.$api.base.tasks.getTasks()
+    } catch (error) {
+      this.$toast.error('Something happened!')
+    }
   },
   methods: {
     onOpenTask({ id }) {
-      this.isOpenTaskModal = true
-      this.selectedTask = this.$api.base.tasks.getTask({ id })
+      try {
+        this.isOpenTaskModal = true
+        this.selectedTask = this.$api.base.tasks.getTask({ id })
+      } catch (error) {
+        this.$toast.error('Something happened!')
+      }
     },
 
     onEditTask({ id }) {
