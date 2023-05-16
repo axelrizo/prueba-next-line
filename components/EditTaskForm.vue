@@ -34,7 +34,7 @@ export default {
   },
 
   async fetch() {
-    const data = await this.$api.base.auth.tasks.getTask({ id: this.taskId })
+    const data = await this.$api.base.tasks.getTask({ id: this.taskId })
     this.form.date = data.due_date
     this.form.title = data.title
   },
@@ -43,12 +43,13 @@ export default {
     async onEditTask() {
       try {
         this.loading = true
-        await this.$api.base.auth.tasks.updateTask({
+        await this.$api.base.tasks.updateTask({
           title: this.form.title,
           dueDate: this.form.date,
           comments: this.form.comments,
           description: this.form.description,
           tags: this.form.tags,
+          id: this.taskId,
         })
         this.loading = false
       } catch (error) {

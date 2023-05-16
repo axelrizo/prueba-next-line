@@ -54,7 +54,7 @@ export default {
       const newTaskValue = this.isTaskCompleted
         ? TASK_STATE.NOT_COMPLETED
         : TASK_STATE.COMPLETED
-      await this.$api.base.auth.tasks.updateTask({
+      await this.$api.base.tasks.updateTask({
         isCompleted: newTaskValue,
         id,
         title,
@@ -63,7 +63,7 @@ export default {
     },
 
     async deleteTask({ id }) {
-      await this.$api.base.auth.tasks.removeTask({ id })
+      await this.$api.base.tasks.removeTask({ id })
       this.$emit('delete-task')
     },
 

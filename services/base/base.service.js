@@ -31,7 +31,7 @@ const tasks = [
   },
 ]
 
-export const baseAuth = ({ store, $axios }) => {
+export const baseApi = ({ store, $axios }) => {
   const baseAuthInstance = $axios.create({
     baseUrl: process.env.BASE_URL,
   })

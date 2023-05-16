@@ -33,7 +33,7 @@ export default {
     async onCreateTask() {
       try {
         this.loading = true
-        await this.$api.base.auth.tasks.createTask({
+        await this.$api.base.tasks.createTask({
           title: this.form.title,
           isCompleted: TASK_STATE.NOT_COMPLETED,
           dueDate: this.form.date,

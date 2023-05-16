@@ -49,12 +49,12 @@ export default {
     }
   },
   async fetch() {
-    this.tasks = await this.$api.base.auth.tasks.getTasks()
+    this.tasks = await this.$api.base.tasks.getTasks()
   },
   methods: {
     onOpenTask({ id }) {
       this.isOpenTaskModal = true
-      this.selectedTask = this.$api.base.auth.tasks.getTask({ id })
+      this.selectedTask = this.$api.base.tasks.getTask({ id })
     },
 
     onEditTask({ id }) {

@@ -1,12 +1,8 @@
-import { baseAuth } from './base/base.auth.instance'
+import { baseApi } from './base/base.service'
 
 export default function ({ store, $axios }, inject) {
-  const base = {
-    auth: baseAuth({ store, $axios }),
-  }
-
   const api = {
-    base,
+    base: baseApi({ store, $axios }),
   }
 
   inject('api', api)
