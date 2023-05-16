@@ -1,10 +1,8 @@
 <template>
   <v-app>
     <v-app-bar v-if="isUserLogged" color="primary" dark app>
-      <v-app-bar-title>Task App</v-app-bar-title>
-      <v-btn color="error" class="ml-auto" @click="onClickLogout">
-        Log out
-      </v-btn>
+      <v-app-bar-title class="mr-auto">Task App</v-app-bar-title>
+      <v-btn color="error" @click="onClickLogout"> Log out </v-btn>
     </v-app-bar>
     <v-main>
       <v-container>
